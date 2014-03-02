@@ -6,9 +6,11 @@ var app = express();
 app.use(logfmt.requestLogger());
 
 app.get('/', function(req, res) {
+	var date = new Date();
 	var jsonObject = {
 						"status": "excellent",
-						"hitCount": 0
+						"hitCount": 0,
+						"date": date
 					  }; 
   res.send(JSON.stringify(jsonObject, undefined, 2));
 });
