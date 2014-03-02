@@ -6,7 +6,11 @@ var app = express();
 app.use(logfmt.requestLogger());
 
 app.get('/', function(req, res) {
-  res.send('Hey there, blimpy boy! Flying through the sky so fancy free.');
+	var jsonObject = {
+						"status": "excellent",
+						"hitCount": 0
+					  }; 
+  res.send(JSON.stringify(jsonObject, undefined, 2));
 });
 
 var port = Number(process.env.PORT || 5000);
